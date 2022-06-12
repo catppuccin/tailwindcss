@@ -17,12 +17,48 @@
 
 ## Usage
 
-1. TODO
+1. Install the plugin
+```sh
+npm install -D @nekowinston/ctp-tailwindcss
+```
 
-## 🙋 FAQ (optional)
+2. Configure your `tailwind.config.js`
+```js
+module.exports = {
+  // ...other settings
+  plugins: [
+    require('@nekowinston/ctp-tailwindcss'),
+  ],
+}
+```
 
-- Q: **_"Where can I find the doc?"_**
-  A: Run `:help theme`
+3. *Optional:* customize the plugin
+```js
+module.exports = {
+  // ...other settings
+  plugins: [
+    require('@nekowinston/ctp-tailwindcss')({
+      // prefix to use, e.g. `text-pink` becomes `text-ctp-pink`.
+      // default is `false`, which means no prefix
+      prefix: 'ctp',
+      // which flavour of colours to use by default, in the `:root`
+      defaultFlavour: 'latte'
+    }),
+  ],
+}
+```
+
+4. Use it in your markup!
+```html
+<!-- switching the class for parent elements changes the flavour! -->
+<body class="frappe">
+  <h1 class="bg-base text-pink">
+    Hello world!
+  </h1>
+</body>
+```
+
+You can find examples for Next.js and Svelte in the `examples` folder.
 
 ## 💝 Thanks to
 
