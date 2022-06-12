@@ -14,7 +14,7 @@
     "react-dom": "18.1.0"
   },
   "devDependencies": {
-    "@nekowinston/ctp-tailwindcss": "^0.0.2",
+    "@nekowinston/ctp-tailwindcss": "^0.0.3",
     "@tailwindcss/forms": "^0.5.2",
     "autoprefixer": "^10.4.7",
     "eslint": "8.16.0",

@@ -13,7 +13,7 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@nekowinston/ctp-tailwindcss": "^0.0.2",
+		"@nekowinston/ctp-tailwindcss": "^0.0.3",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/forms": "^0.5.2",
@@ -31,6 +31,5 @@
 		"tailwindcss-theme-swapper": "^0.6.2",
 		"typescript": "~4.6.2"
 	},
-	"type": "module",
-	"packageManager": "yarn@3.2.1"
+	"type": "module"
 }
