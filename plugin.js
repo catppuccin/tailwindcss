@@ -56,7 +56,7 @@ const generateColorCss = (defaultFlavour = "mocha") => {
 
 // generates the 'options' mapping in tailwind.config.js
 // this extends the theme & adds the names of the colours
-const generateOptions = (prefix) => {
+const generateOptions = (prefix = false) => {
 	const result = {};
 	colours.map((colour) => {
 		const keyName = prefix ? `${prefix}-${colour}` : colour;
@@ -85,14 +85,14 @@ const colourConfigKeys = [
 module.exports = plugin.withOptions(
 	(options) => {
 		return ({ addBase }) => {
-			addBase(generateColorCss(options.defaultFlavour));
+			addBase(generateColorCss(options?.defaultFlavour));
 		};
 	},
 	(options) => {
 		// generate the options mapping
 		const extendOption = {};
 		colourConfigKeys.map((key) => {
-			extendOption[key] = generateOptions(options.prefix);
+			extendOption[key] = generateOptions(options?.prefix);
 		});
 
 		return {
