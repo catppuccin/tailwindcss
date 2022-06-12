@@ -1,0 +1,37 @@
+{
+	"name": "@nekowinston/ctp-tailwindcss",
+	"version": "0.0.1",
+	"main": "plugin.js",
+	"author": "winston <hey@winston.sh>",
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"release": "standard-version"
+	},
+	"files": [
+		"plugin.js"
+	],
+	"bugs": {
+		"url": "https://github.com/nekowinston/catppuccin-tailwindcss/issues"
+	},
+	"homepage": "https://github.com/nekowinston/catppuccin-tailwindcss#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nekowinston/catppuccin-tailwindcss.git"
+	},
+	"keywords": [
+		"pastel-colors",
+		"catppuccin",
+		"colors",
+		"theme",
+		"palette",
+		"soothing"
+	],
+	"dependencies": {
+		"@nekowinston/ctp-palette": "0.1.5",
+		"tailwindcss": "^3.0.24"
+	},
+	"devDependencies": {
+		"standard-version": "^9.5.0"
+	}
+}

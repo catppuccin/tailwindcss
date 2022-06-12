@@ -1,7 +1,7 @@
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/misc/transparent.png" height="30" width="0px"/>
-	Catppuccin for App
+	Catppuccin for TailwindCSS
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
@@ -17,10 +17,7 @@
 
 ## Usage
 
-1. Clone this repository locally
-2. Open the app's settings
-3. Select `import theme` and browse to where you cloned Catppuccin
-4. Select it
+1. TODO
 
 ## 🙋 FAQ (optional)
 
@@ -29,7 +26,7 @@
 
 ## 💝 Thanks to
 
-- [Human](https://github.com/catppuccin)
+- [winston](https://github.com/nekowinston)
 
 &nbsp;
 
