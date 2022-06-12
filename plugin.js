@@ -39,15 +39,19 @@ const parseHexToRGB = (hex) => {
 };
 
 // generates the css variables, injected in the addBase() function
-const generateColorCss = (defaultFlavour = "mocha") => {
+const generateColorCss = (defaultFlavour = "mocha", prefix = false) => {
 	const result = {};
 	variants.map((variant) => {
-		const variantClass =
-			variant === defaultFlavour ? ":root" : `.${variant}`;
+		// if a prefix is defined, use e.g. '.ctp-mocha' instead of '.mocha'
+		const className = prefix ? `.${prefix}-${variant}` : `.${variant}`;
+
+		// if the current variant is defaultFlavour, add to ':root'
+		const keyName = variant === defaultFlavour ? ":root" : className;
+
 		result[variantClass] = {};
 		colours.map((colour) => {
 			result[variantClass][`--ctp-${colour}`] = parseHexToRGB(
-				palette[variant][colour]
+				palette[keyName][colour]
 			);
 		});
 	});
@@ -85,7 +89,7 @@ const colourConfigKeys = [
 module.exports = plugin.withOptions(
 	(options) => {
 		return ({ addBase }) => {
-			addBase(generateColorCss(options?.defaultFlavour));
+			addBase(generateColorCss(options?.defaultFlavour, options?.prefix));
 		};
 	},
 	(options) => {
