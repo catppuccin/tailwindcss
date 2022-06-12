@@ -48,10 +48,10 @@ const generateColorCss = (defaultFlavour = "mocha", prefix = false) => {
 		// if the current variant is defaultFlavour, add to ':root'
 		const keyName = variant === defaultFlavour ? ":root" : className;
 
-		result[variantClass] = {};
+		result[keyName] = {};
 		colours.map((colour) => {
-			result[variantClass][`--ctp-${colour}`] = parseHexToRGB(
-				palette[keyName][colour]
+			result[keyName][`--ctp-${colour}`] = parseHexToRGB(
+				palette[variant][colour]
 			);
 		});
 	});
