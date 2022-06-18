@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+Lots of classes hidden here to showcase the catppuccin color classes
+*/
+
+.App {
+  grid-template-rows: 1fr auto;
+}
+
+#card {
+  @apply w-auto md:w-2/4 2xl:w-1/4 bg-gradient-to-b p-6 rounded-3xl flex flex-col justify-center items-center outline outline-2 shadow-xl;
+}
+
+#card h1 {
+  @apply font-black text-5xl lg:text-6xl mb-4 bg-gradient-to-r bg-clip-text text-transparent;
+}
+
+#card p {
+  @apply font-bold mb-4 text-center;
+}
+
+#card button {
+  @apply text-ctp-base px-4 py-2 rounded-xl font-bold text-xl transition duration-300 ease-in-out ;
+}
+
+#palette {
+  @apply grid justify-items-center auto-rows-auto grid-cols-7 my-8 gap-4;
+}
+
+#palette > * {
+  @apply w-6 h-6 rounded-full;
+}
+
+.navbutton-left {
+  @apply hover:bg-ctp-pink/50 active:bg-ctp-pink/80 py-2 pr-2 pl-4 rounded-l-xl outline outline-1 outline-ctp-overlay2/10;
+}
+
+.navbutton-center {
+  @apply hover:bg-ctp-pink/50 active:bg-ctp-pink/80 p-2 outline outline-1 outline-ctp-overlay2/10;
+}
+
+.navbutton-right {
+  @apply hover:bg-ctp-pink/50 active:bg-ctp-pink/80 py-2 pl-2 pr-4 rounded-r-xl outline outline-1 outline-ctp-overlay2/10;
+}
