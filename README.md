@@ -15,6 +15,10 @@
   <img src="./assets/sample.png"/>
 </p>
 
+## Preview
+
+You can check out one of our deployed examples [here](https://nekowinston.github.io/catppuccin-tailwindcss/)!
+
 ## Usage
 
 1. Install the plugin
