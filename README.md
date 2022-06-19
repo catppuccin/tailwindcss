@@ -23,7 +23,9 @@ You can check out one of our deployed examples [here](https://nekowinston.github
 
 1. Install the plugin
 ```sh
-npm install -D @nekowinston/ctp-tailwindcss
+$ npm install -D @nekowinston/ctp-tailwindcss
+# --- or ---
+$ yarn add -D @nekowinston/ctp-tailwindcss
 ```
 
 2. Configure your `tailwind.config.js`
@@ -62,7 +64,7 @@ module.exports = {
 </body>
 ```
 
-You can find examples for Next.js and Svelte in the `examples` folder.
+You can find examples for Next.js, Svelte, and Vite in the `examples` folder.
 
 ## 💝 Thanks to
 
