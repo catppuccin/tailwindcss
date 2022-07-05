@@ -234,6 +234,19 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@catppuccin/palette@0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@catppuccin/palette/-/palette-0.1.5.tgz#79350555c86707913942bf4feaac9fe9bc0c1d7c"
+  integrity sha512-IQLsZwXDMpLc5CFGjIMa/gFnnFL/QLB280F11B51JweZHerZ/FgPXdIR4eQqn1CgrqI3wGfgnj1LVPx12DV/Uw==
+
+"@catppuccin/tailwindcss@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@catppuccin/tailwindcss/-/tailwindcss-0.0.3.tgz#4acc7e30390412eb8f68495ed0fed12a8ae6b7aa"
+  integrity sha512-WflkshIBxgEVSPCtvdXZRoYIYTOs/PO8rkPOtpqT9B++aKyLpEgERRsrWDidBVwpLn6UhPKNpo0iAscZx43ygw==
+  dependencies:
+    "@catppuccin/palette" "0.1.5"
+    tailwindcss "^3.0.24"
+
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz#e5d2e450306a9491e3bd77e323e38d7aff315996"
@@ -273,19 +286,6 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
-
-"@nekowinston/ctp-palette@0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@nekowinston/ctp-palette/-/ctp-palette-0.1.5.tgz#fea4b3deb6c1cf7cfae1b219a895ed164e12ac8b"
-  integrity sha512-ABAOidob3tK87BxSnt11ti6OvIBia1gk+7hlkIZKktHhINzBp53S6kRXhwPdejjmfCyRiL456Lr3+d/Gbga3zQ==
-
-"@nekowinston/ctp-tailwindcss@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@nekowinston/ctp-tailwindcss/-/ctp-tailwindcss-0.0.3.tgz#ec5861bd0b9387fd190706e4390ad07f5e979f3e"
-  integrity sha512-sbnaZhVDgPs8AHXW1OcjTdQL596PXCYSXSjd9Zfp8Iebbq++fByop691XTXtGRSOW9aBUEpDGxllCqDm0kuirQ==
-  dependencies:
-    "@nekowinston/ctp-palette" "0.1.5"
-    tailwindcss "^3.0.24"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

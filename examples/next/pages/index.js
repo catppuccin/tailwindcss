@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { variants } from "@nekowinston/ctp-palette";
+import { variants } from "@catppuccin/palette";
 
 export default function Home() {
 	const changeColorscheme = (e) => {

@@ -14,7 +14,7 @@ module.exports = {
 	],
 	plugins: [
 		require('@tailwindcss/forms'),
-		require('@nekowinston/ctp-tailwindcss')({
+		require('@catppuccin/tailwindcss')({
 			prefix: false,
 			defaultFlavour: 'mocha'
 		})
