@@ -1,7 +1,7 @@
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/misc/transparent.png" height="30" width="0px"/>
-	Catppuccin for TailwindCSS
+	Catppuccin for <a href="https://github.com/tailwindlabs/tailwindcss">TailwindCSS</a>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
@@ -17,15 +17,15 @@
 
 ## Preview
 
-You can check out one of our deployed examples [here](https://nekowinston.github.io/catppuccin-tailwindcss/)!
+You can check out one of our deployed examples [here](https://catppuccin.github.io/tailwindcss)!
 
 ## Usage
 
 1. Install the plugin
 ```sh
-$ npm install -D @nekowinston/ctp-tailwindcss
+$ npm install -D @catppuccin/tailwindcss
 # --- or ---
-$ yarn add -D @nekowinston/ctp-tailwindcss
+$ yarn add -D @catppuccin/tailwindcss
 ```
 
 2. Configure your `tailwind.config.js`
@@ -33,7 +33,7 @@ $ yarn add -D @nekowinston/ctp-tailwindcss
 module.exports = {
   // ...other settings
   plugins: [
-    require('@nekowinston/ctp-tailwindcss'),
+    require('@catppuccin/tailwindcss'),
   ],
 }
 ```
@@ -43,7 +43,7 @@ module.exports = {
 module.exports = {
   // ...other settings
   plugins: [
-    require('@nekowinston/ctp-tailwindcss')({
+    require('@catppuccin/tailwindcss')({
       // prefix to use, e.g. `text-pink` becomes `text-ctp-pink`.
       // default is `false`, which means no prefix
       prefix: 'ctp',

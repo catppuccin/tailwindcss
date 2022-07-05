@@ -1,5 +1,5 @@
 const plugin = require("tailwindcss/plugin");
-const ctp = require("@nekowinston/ctp-palette");
+const ctp = require("@catppuccin/palette");
 
 // helper function for css values + opacity in tailwind < 3.1
 const withOpacity = (variableName) => {

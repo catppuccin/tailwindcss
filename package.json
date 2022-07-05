@@ -1,5 +1,5 @@
 {
-	"name": "@nekowinston/ctp-tailwindcss",
+	"name": "@catppuccin/tailwindcss",
 	"version": "0.0.3",
 	"main": "plugin.js",
 	"author": "winston <hey@winston.sh>",
@@ -12,12 +12,12 @@
 		"plugin.js"
 	],
 	"bugs": {
-		"url": "https://github.com/nekowinston/catppuccin-tailwindcss/issues"
+		"url": "https://github.com/catpuccin/tailwindcss/issues"
 	},
-	"homepage": "https://github.com/nekowinston/catppuccin-tailwindcss#readme",
+	"homepage": "https://github.com/catpuccin/tailwindcss#readme",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/nekowinston/catppuccin-tailwindcss.git"
+		"url": "https://github.com/catpuccin/tailwindcss.git"
 	},
 	"keywords": [
 		"pastel-colors",
@@ -28,7 +28,7 @@
 		"soothing"
 	],
 	"dependencies": {
-		"@nekowinston/ctp-palette": "0.1.5",
+		"@catppuccin/palette": "0.1.5",
 		"tailwindcss": "^3.0.24"
 	},
 	"devDependencies": {
