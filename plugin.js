@@ -39,7 +39,7 @@ const parseHexToRGB = (hex) => {
 };
 
 // generates the css variables, injected in the addBase() function
-const generateColorCss = (defaultFlavour = "mocha", prefix = false) => {
+const generateColorCss = (defaultFlavour = "", prefix = false) => {
 	const result = {};
 	variants.map((variant) => {
 		// if a prefix is defined, use e.g. '.ctp-mocha' instead of '.mocha'
