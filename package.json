@@ -2,7 +2,11 @@
 	"name": "@catppuccin/tailwindcss",
 	"version": "0.1.0",
 	"main": "plugin.js",
-	"author": "winston <hey@winston.sh>",
+	"author": "Catppuccin Org <releases@catppuccin.com>",
+	"contributors": [
+		"winston <hey@winston.sh>",
+		"Adal Zanabria <adal.zanabria@gmail.com>"
+	],
 	"license": "MIT",
 	"private": false,
 	"scripts": {
