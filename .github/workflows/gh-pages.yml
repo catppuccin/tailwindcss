@@ -1,0 +1,39 @@
+name: Generate GitHub pages examples
+on:
+  push:
+    paths:
+      - 'examples/vite'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'examples/vite'
+
+defaults:
+  run:
+    working-directory: examples/vite
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3.0.1
+
+      - name: Setup Node
+        uses: actions/setup-node@v3.1.1
+        with:
+          node-version: '16'
+          cache: 'yarn'
+
+      - run: yarn install
+      - run: yarn build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
