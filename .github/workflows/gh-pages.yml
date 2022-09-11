@@ -2,12 +2,12 @@ name: Generate GitHub pages examples
 on:
   push:
     paths:
-      - 'examples/vite'
+      - 'examples/vite/**'
     branches:
       - main
   pull_request:
     paths:
-      - 'examples/vite'
+      - 'examples/vite/**'
 
 defaults:
   run:
