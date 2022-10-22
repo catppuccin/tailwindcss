@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/catppuccin/tailwindcss/compare/v0.1.0...v0.1.1) (2022-10-22)
+
+
+### Bug Fixes
+
+* don't set an opinionated default flavour ([0b6ab0a](https://github.com/catppuccin/tailwindcss/commit/0b6ab0ac87f4af273efcdaf99fa164bdd88a3086)), closes [#3](https://github.com/catppuccin/tailwindcss/issues/3)
+
 ## [0.1.0](https://github.com/catppuccin/tailwindcss/compare/v0.0.3...v0.1.0) (2022-07-05)
 
 * Now released under the @catppuccin namespace: [@catppuccin/tailwindcss](https://www.npmjs.com/package/@catppuccin/tailwindcss).
