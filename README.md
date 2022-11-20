@@ -17,11 +17,13 @@
 
 ## Preview
 
-You can check out one of our deployed examples [here](https://tailwindcss.catppuccin.com)!
+You can check out one of our deployed examples
+[here](https://tailwindcss.catppuccin.com)!
 
 ## Usage
 
 1. Install the plugin
+
 ```sh
 $ npm install -D @catppuccin/tailwindcss
 # --- or ---
@@ -29,38 +31,37 @@ $ yarn add -D @catppuccin/tailwindcss
 ```
 
 2. Configure your `tailwind.config.js`
+
 ```js
 module.exports = {
   // ...other settings
-  plugins: [
-    require('@catppuccin/tailwindcss'),
-  ],
-}
+  plugins: [require("@catppuccin/tailwindcss")],
+};
 ```
 
-3. *Optional:* customize the plugin
+3. _Optional:_ customize the plugin
+
 ```js
 module.exports = {
   // ...other settings
   plugins: [
-    require('@catppuccin/tailwindcss')({
+    require("@catppuccin/tailwindcss")({
       // prefix to use, e.g. `text-pink` becomes `text-ctp-pink`.
       // default is `false`, which means no prefix
-      prefix: 'ctp',
+      prefix: "ctp",
       // which flavour of colours to use by default, in the `:root`
-      defaultFlavour: 'latte'
+      defaultFlavour: "latte",
     }),
   ],
-}
+};
 ```
 
 4. Use it in your markup!
+
 ```html
 <!-- switching the class for parent elements changes the flavour! -->
 <body class="frappe">
-  <h1 class="bg-base text-pink">
-    Hello world!
-  </h1>
+  <h1 class="bg-base text-pink">Hello world!</h1>
 </body>
 ```
 

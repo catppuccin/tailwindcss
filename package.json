@@ -1,41 +1,41 @@
 {
-	"name": "@catppuccin/tailwindcss",
-	"version": "0.1.1",
-	"main": "plugin.js",
-	"author": "Catppuccin Org <releases@catppuccin.com>",
-	"contributors": [
-		"winston <hey@winston.sh>",
-		"Adal Zanabria <adal.zanabria@gmail.com>"
-	],
-	"license": "MIT",
-	"private": false,
-	"scripts": {
-		"release": "standard-version"
-	},
-	"files": [
-		"plugin.js"
-	],
-	"bugs": {
-		"url": "https://github.com/catppuccin/tailwindcss/issues"
-	},
-	"homepage": "https://github.com/catppuccin/tailwindcss#readme",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/catppuccin/tailwindcss.git"
-	},
-	"keywords": [
-		"pastel-colors",
-		"catppuccin",
-		"colors",
-		"theme",
-		"palette",
-		"soothing"
-	],
-	"dependencies": {
-		"@catppuccin/palette": "0.1.5",
-		"tailwindcss": "^3.0.24"
-	},
-	"devDependencies": {
-		"standard-version": "^9.5.0"
-	}
+  "name": "@catppuccin/tailwindcss",
+  "version": "0.1.1",
+  "main": "plugin.js",
+  "author": "Catppuccin Org <releases@catppuccin.com>",
+  "contributors": [
+    "winston <hey@winston.sh>",
+    "Adal Zanabria <adal.zanabria@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "release": "standard-version"
+  },
+  "files": [
+    "plugin.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/catppuccin/tailwindcss/issues"
+  },
+  "homepage": "https://github.com/catppuccin/tailwindcss#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/catppuccin/tailwindcss.git"
+  },
+  "keywords": [
+    "pastel-colors",
+    "catppuccin",
+    "colors",
+    "theme",
+    "palette",
+    "soothing"
+  ],
+  "dependencies": {
+    "@catppuccin/palette": "0.1.5",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
 }
