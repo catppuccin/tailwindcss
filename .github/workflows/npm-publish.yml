@@ -1,4 +1,7 @@
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   publish:
@@ -8,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: "npm"
       - run: npm install
       - uses: JS-DevTools/npm-publish@v1
         with:
