@@ -10,7 +10,10 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "release": "standard-version"
+    "build": "esbuild plugin.ts --bundle --outfile=./dist/plugin.js --platform=node --target=es2019 --format=cjs --external:tailwindcss",
+    "release": "standard-version",
+    "prepare": "husky install",
+    "lint": "eslint . --ext .ts"
   },
   "files": [
     "plugin.js"
@@ -32,10 +35,24 @@
     "soothing"
   ],
   "dependencies": {
-    "@catppuccin/palette": "0.1.5",
-    "tailwindcss": "^3.0.24"
+    "@types/node": "^18.11.9",
+    "esbuild": "^0.15.14",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.9.3"
   },
   "devDependencies": {
+    "@catppuccin/palette": "0.1.5",
+    "@tsconfig/recommended": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "eslint": "^8.28.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "standard-version": "^9.5.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,css,md}": "prettier --write",
+    "*.ts": "eslint --cache --fix"
   }
 }
