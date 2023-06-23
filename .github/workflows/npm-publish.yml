@@ -1,7 +1,7 @@
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "*"
 
 jobs:
   publish:
@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
           cache: "npm"
       - run: npm install
       - uses: JS-DevTools/npm-publish@v1
