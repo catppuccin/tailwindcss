@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/catppuccin/tailwindcss/compare/v0.1.3...v0.1.4) (2023-06-23)
+
+
+### Bug Fixes
+
+* don't override default tailwind color shades ([ac73c21](https://github.com/catppuccin/tailwindcss/commit/ac73c21345afd1d4e46148ba249e68e648e01e49)), closes [#4](https://github.com/catppuccin/tailwindcss/issues/4)
+
 ### [0.1.3](https://github.com/catppuccin/tailwindcss/compare/v0.1.1...v0.1.3) (2023-06-23)
 
 

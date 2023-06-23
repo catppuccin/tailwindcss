@@ -1,6 +1,6 @@
 {
   "name": "@catppuccin/tailwindcss",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Catppuccin Org <releases@catppuccin.com>",
