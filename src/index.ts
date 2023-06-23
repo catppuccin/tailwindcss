@@ -78,12 +78,12 @@ const generateColorCss = (
 // generates the 'options' mapping in tailwind.config.js
 // this extends the theme & adds the names of the colors
 const generateOptions = (prefix: string | boolean = false) => {
-  const result: Record<string, WithOpacityFn> = {};
+  const result: Record<string, { DEFAULT: WithOpacityFn }> = {};
 
   colors.map((color) => {
     const keyName = prefix ? `${prefix}-${color}` : color;
     // withOpacity is used to provide backward compatibility with Tailwind < 3.1
-    result[keyName] = withOpacity(`--ctp-${color}`);
+    result[keyName] = { DEFAULT: withOpacity(`--ctp-${color}`) };
   });
 
   return result;
