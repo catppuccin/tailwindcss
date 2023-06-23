@@ -9,10 +9,6 @@ on:
     paths:
       - 'examples/vite/**'
 
-defaults:
-  run:
-    working-directory: examples/vite
-
 jobs:
   deploy:
     runs-on: ubuntu-20.04
@@ -28,13 +24,15 @@ jobs:
           cache: 'npm'
           cache-dependency-path: ./examples/vite/package-lock.json
 
-      - run: npm ci
-      - run: npm run build
+      - run: |
+          cd examples/vite
+          npm ci
+          npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./examples/vite/dist
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
