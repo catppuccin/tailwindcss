@@ -1,3 +1,5 @@
+name: Publish to NPM
+
 on:
   push:
     tags:
@@ -13,6 +15,7 @@ jobs:
           node-version: 20
           cache: "npm"
       - run: npm install
+      - run: npm run build
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
