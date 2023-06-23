@@ -1,13 +1,8 @@
 name: Generate GitHub pages examples
 on:
   push:
-    paths:
-      - 'examples/vite/**'
     branches:
       - main
-  pull_request:
-    paths:
-      - 'examples/vite/**'
 
 jobs:
   deploy:
