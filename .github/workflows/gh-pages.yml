@@ -19,19 +19,20 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v3.0.1
+      - uses: actions/checkout@v3
 
       - name: Setup Node
-        uses: actions/setup-node@v3.1.1
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
-          cache: 'yarn'
+          cache: 'npm'
+          cache-dependency-path: ./examples/vite/package-lock.json
 
-      - run: yarn install
-      - run: yarn build
+      - run: npm ci
+      - run: npm run build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3.8.0
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
