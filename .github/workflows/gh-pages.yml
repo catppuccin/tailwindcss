@@ -20,6 +20,8 @@ jobs:
           cache-dependency-path: ./examples/vite/package-lock.json
 
       - run: |
+          npm ci
+          npm run build
           cd examples/vite
           npm ci
           npm run build
