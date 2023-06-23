@@ -1,18 +1,22 @@
-// const plugin = require("tailwindcss/plugin");
-import * as plugin from "tailwindcss/plugin";
+import plugin from "tailwindcss/plugin";
 import { variants } from "@catppuccin/palette";
 import { Config } from "tailwindcss";
 import { ThemeConfig } from "tailwindcss/types/config";
-import {
-  CatppuccinColour,
-  CatppuccinFlavour,
-  CatppuccinPluginOptions,
-  WithOpacityFn,
-} from "./plugin.d";
+
+type CatppuccinFlavor = keyof typeof variants;
+type CatppuccinColor = keyof (typeof variants)[CatppuccinFlavor];
+type CatppuccinPluginOptions = {
+  prefix?: string | boolean;
+  defaultFlavour?: CatppuccinFlavor;
+};
+type WithOpacityFn = (options: { opacityValue?: number }) => string;
+type PickByType<T, Value> = {
+  [P in keyof T as T[P] extends Value | undefined ? P : never]: T[P];
+};
 
 // helper function for css values + opacity in tailwind < 3.1
 const withOpacity = (variableName: string) => {
-  return ({ opacityValue }: { opacityValue: number | undefined }) => {
+  return ({ opacityValue }: { opacityValue?: number }) => {
     if (opacityValue !== undefined) {
       return `rgba(var(${variableName}), ${opacityValue})`;
     }
@@ -23,68 +27,73 @@ const withOpacity = (variableName: string) => {
 // generate an object with the catppuccin palette
 const palette: Record<string, Record<string, string>> = {};
 Object.keys(variants).map((variant) => {
-  // insert a key into the colours object, with an empty object
+  // insert a key into the colors object, with an empty object
   palette[variant] = {};
-  // for each colour...
-  Object.keys(variants[variant as CatppuccinFlavour]).map((colour) => {
-    // insert a key into the colours object
-    palette[variant][colour] =
-      variants[variant as CatppuccinFlavour][colour as CatppuccinColour].hex;
+  // for each color...
+  Object.keys(variants[variant as CatppuccinFlavor]).map((color) => {
+    // insert a key into the colors object
+    palette[variant][color] =
+      variants[variant as CatppuccinFlavor][color as CatppuccinColor].hex;
   });
 });
 
-// two constants keeping track of the names of the variants & colours
-const flavours = Object.keys(palette);
-const colours = Object.keys(palette[flavours[0]]);
+// two constants keeping track of the names of the variants & colors
+const flavors = Object.keys(palette);
+const colors = Object.keys(palette[flavors[0]]);
 
 // converts '#000000' to '0, 0, 0' for the css variables
-const parseHexToRGB = (hex: string) => {
-  // get the colour, drop the '#' if it's there
-  const hexColour = hex.replace("#", "");
-  // convert the colour to r g,b in base 10
-  const r = parseInt(hexColour.substring(0, 2), 16);
-  const g = parseInt(hexColour.substring(2, 4), 16);
-  const b = parseInt(hexColour.substring(4, 6), 16);
+const parseHexToRGB = (hex: string): string => {
+  const hexColor = hex.replace("#", "");
+  const r = parseInt(hexColor.substring(0, 2), 16);
+  const g = parseInt(hexColor.substring(2, 4), 16);
+  const b = parseInt(hexColor.substring(4, 6), 16);
   return `${r}, ${g}, ${b}`;
 };
 
 // generates the css variables, injected in the addBase() function
 const generateColorCss = (
-  defaultFlavour = "",
+  defaultFlavor: CatppuccinFlavor | "" = "",
   prefix: string | boolean = false
 ) => {
   const result: Record<string, Record<string, string>> = {};
-  flavours.map((variant) => {
+
+  flavors.map((variant) => {
     // if a prefix is defined, use e.g. '.ctp-mocha' instead of '.mocha'
     const className = prefix ? `.${prefix}-${variant}` : `.${variant}`;
 
-    // if the current variant is defaultFlavour, add to ':root'
-    const keyName = variant === defaultFlavour ? ":root" : className;
+    // if the current variant is defaultFlavor, add to ':root'
+    const keyName = variant === defaultFlavor ? ":root" : className;
 
     result[keyName] = {};
-    colours.map((colour) => {
-      result[keyName][`--ctp-${colour}`] = parseHexToRGB(
-        palette[variant][colour]
+    colors.map((color) => {
+      result[keyName][`--ctp-${color}`] = parseHexToRGB(
+        palette[variant][color]
       );
     });
   });
+
   return result;
 };
 
 // generates the 'options' mapping in tailwind.config.js
-// this extends the theme & adds the names of the colours
+// this extends the theme & adds the names of the colors
 const generateOptions = (prefix: string | boolean = false) => {
   const result: Record<string, WithOpacityFn> = {};
-  colours.map((colour) => {
-    const keyName = prefix ? `${prefix}-${colour}` : colour;
+
+  colors.map((color) => {
+    const keyName = prefix ? `${prefix}-${color}` : color;
     // withOpacity is used to provide backward compatibility with Tailwind < 3.1
-    result[keyName] = withOpacity(`--ctp-${colour}`);
+    result[keyName] = withOpacity(`--ctp-${color}`);
   });
+
   return result;
 };
 
-// every colour key available in tailwindcss
-const colourConfigKeys: Array<keyof ThemeConfig> = [
+// every color key available in tailwindcss
+const colorConfigKeys: (keyof PickByType<
+  ThemeConfig,
+  ThemeConfig["colors"]
+>)[] = [
   "backgroundColor",
   "borderColor",
   "caretColor",
@@ -99,8 +108,8 @@ const colourConfigKeys: Array<keyof ThemeConfig> = [
   "textColor",
 ];
 
-export default plugin.withOptions(
-  (options: CatppuccinPluginOptions) => {
+export default plugin.withOptions<CatppuccinPluginOptions>(
+  (options) => {
     return ({ addBase }) => {
       addBase(generateColorCss(options?.defaultFlavour, options?.prefix));
     };
@@ -108,7 +117,8 @@ export default plugin.withOptions(
   (options) => {
     // generate the options mapping
     const extendOption: Partial<ThemeConfig> = {};
-    colourConfigKeys.map((key) => {
+
+    colorConfigKeys.map((key) => {
       extendOption[key] = generateOptions(options.prefix);
     });
 

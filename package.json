@@ -1,7 +1,8 @@
 {
   "name": "@catppuccin/tailwindcss",
-  "version": "0.1.1",
-  "main": "plugin.js",
+  "version": "0.1.2",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Catppuccin Org <releases@catppuccin.com>",
   "contributors": [
     "winston <hey@winston.sh>",
@@ -10,13 +11,13 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "esbuild plugin.ts --bundle --outfile=./dist/plugin.js --platform=node --target=es2019 --format=cjs --external:tailwindcss",
+    "build": "tsup",
     "release": "standard-version",
     "prepare": "husky install",
     "lint": "eslint . --ext .ts"
   },
   "files": [
-    "plugin.js"
+    "./dist/"
   ],
   "bugs": {
     "url": "https://github.com/catppuccin/tailwindcss/issues"
@@ -34,22 +35,21 @@
     "palette",
     "soothing"
   ],
-  "dependencies": {
-    "@types/node": "^18.11.9",
-    "esbuild": "^0.15.14",
-    "tailwindcss": "^3.0.24",
-    "typescript": "^4.9.3"
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0"
   },
   "devDependencies": {
-    "@catppuccin/palette": "0.1.5",
-    "@tsconfig/recommended": "^1.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.44.0",
-    "@typescript-eslint/parser": "^5.44.0",
-    "eslint": "^8.28.0",
-    "husky": "^8.0.2",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "standard-version": "^9.5.0"
+    "@catppuccin/palette": "0.1.8",
+    "@tsconfig/recommended": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "eslint": "^8.43.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "standard-version": "^9.5.0",
+    "tsup": "^7.0.0",
+    "typescript": "^5.1.3"
   },
   "lint-staged": {
     "*.{js,ts,css,md}": "prettier --write",
