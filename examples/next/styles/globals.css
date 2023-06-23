@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-    html,
-    body,
-    body > div:first-child,
-    div#__next,
-    div#__next > div {
-        @apply h-full bg-base text-text;
-    }
+  html,
+  body,
+  body > div:first-child,
+  div#__next,
+  div#__next > div {
+    @apply h-full bg-base text-text;
+  }
 }

@@ -10,9 +10,7 @@ function App() {
   };
   return (
     <div className={`App min-h-screen grid ${theme}`}>
-      <main
-        className="flex flex-col justify-center items-center bg-gradient-to-b from-ctp-base to-ctp-crust p-6"
-      >
+      <main className="flex flex-col justify-center items-center bg-gradient-to-b from-ctp-base to-ctp-crust p-6">
         <div className="flex mb-6 px-4 py-2 rounded-xl text-ctp-text">
           <button
             onClick={() => {
