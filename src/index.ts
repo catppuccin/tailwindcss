@@ -119,7 +119,7 @@ export default plugin.withOptions<CatppuccinPluginOptions>(
     const extendOption: Partial<ThemeConfig> = {};
 
     colorConfigKeys.map((key) => {
-      extendOption[key] = generateOptions(options.prefix);
+      extendOption[key] = generateOptions(options?.prefix);
     });
 
     const config: Config = {
