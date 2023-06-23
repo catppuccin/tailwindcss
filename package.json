@@ -1,41 +1,61 @@
 {
-	"name": "@catppuccin/tailwindcss",
-	"version": "0.1.1",
-	"main": "plugin.js",
-	"author": "Catppuccin Org <releases@catppuccin.com>",
-	"contributors": [
-		"winston <hey@winston.sh>",
-		"Adal Zanabria <adal.zanabria@gmail.com>"
-	],
-	"license": "MIT",
-	"private": false,
-	"scripts": {
-		"release": "standard-version"
-	},
-	"files": [
-		"plugin.js"
-	],
-	"bugs": {
-		"url": "https://github.com/catppuccin/tailwindcss/issues"
-	},
-	"homepage": "https://github.com/catppuccin/tailwindcss#readme",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/catppuccin/tailwindcss.git"
-	},
-	"keywords": [
-		"pastel-colors",
-		"catppuccin",
-		"colors",
-		"theme",
-		"palette",
-		"soothing"
-	],
-	"dependencies": {
-		"@catppuccin/palette": "0.1.5",
-		"tailwindcss": "^3.0.24"
-	},
-	"devDependencies": {
-		"standard-version": "^9.5.0"
-	}
+  "name": "@catppuccin/tailwindcss",
+  "version": "0.1.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Catppuccin Org <releases@catppuccin.com>",
+  "contributors": [
+    "winston <hey@winston.sh>",
+    "Adal Zanabria <adal.zanabria@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsup",
+    "release": "standard-version",
+    "prepare": "husky install",
+    "lint": "eslint . --ext .ts"
+  },
+  "files": [
+    "./dist/"
+  ],
+  "bugs": {
+    "url": "https://github.com/catppuccin/tailwindcss/issues"
+  },
+  "homepage": "https://github.com/catppuccin/tailwindcss#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/catppuccin/tailwindcss.git"
+  },
+  "sponsor": {
+    "url": "https://opencollective.com/catppuccin"
+  },
+  "keywords": [
+    "pastel-colors",
+    "catppuccin",
+    "colors",
+    "theme",
+    "palette",
+    "soothing"
+  ],
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@catppuccin/palette": "0.1.8",
+    "@tsconfig/recommended": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "eslint": "^8.43.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "standard-version": "^9.5.0",
+    "tsup": "^7.0.0",
+    "typescript": "^5.1.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,css,md}": "prettier --write",
+    "*.ts": "eslint --cache --fix"
+  }
 }
