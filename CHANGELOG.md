@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/catppuccin/tailwindcss/compare/v0.1.1...v0.1.3) (2023-06-23)
+
+
+### Features
+
+* typescript rewrite ([#7](https://github.com/catppuccin/tailwindcss/issues/7)) ([0270b7f](https://github.com/catppuccin/tailwindcss/commit/0270b7fedbfcd3f1f89077948a4ba90218726480))
+
 ### [0.1.1](https://github.com/catppuccin/tailwindcss/compare/v0.1.0...v0.1.1) (2022-10-22)
 
 
