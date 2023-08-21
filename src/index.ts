@@ -1,92 +1,81 @@
 import plugin from "tailwindcss/plugin";
-import { variants } from "@catppuccin/palette";
 import { Config } from "tailwindcss";
 import { ThemeConfig } from "tailwindcss/types/config";
 
-type CatppuccinFlavor = keyof typeof variants;
-type CatppuccinColor = keyof (typeof variants)[CatppuccinFlavor];
-type CatppuccinPluginOptions = {
-  prefix?: string | boolean;
-  defaultFlavour?: CatppuccinFlavor;
-};
-type WithOpacityFn = (options: { opacityValue?: number }) => string;
+import { colorEntries, CtpFlavors, flavorEntries } from "@catppuccin/palette";
+import { generateShades } from "./shades";
+
 type PickByType<T, Value> = {
   [P in keyof T as T[P] extends Value | undefined ? P : never]: T[P];
 };
 
-// helper function for css values + opacity in tailwind < 3.1
-const withOpacity = (variableName: string) => {
-  return ({ opacityValue }: { opacityValue?: number }) => {
-    if (opacityValue !== undefined) {
-      return `rgba(var(${variableName}), ${opacityValue})`;
-    }
-    return `rgb(var(${variableName}))`;
-  };
-};
-
-// generate an object with the catppuccin palette
-const palette: Record<string, Record<string, string>> = {};
-Object.keys(variants).map((variant) => {
-  // insert a key into the colors object, with an empty object
-  palette[variant] = {};
-  // for each color...
-  Object.keys(variants[variant as CatppuccinFlavor]).map((color) => {
-    // insert a key into the colors object
-    palette[variant][color] =
-      variants[variant as CatppuccinFlavor][color as CatppuccinColor].hex;
-  });
-});
-
-// two constants keeping track of the names of the variants & colors
-const flavors = Object.keys(palette);
-const colors = Object.keys(palette[flavors[0]]);
-
-// converts '#000000' to '0, 0, 0' for the css variables
-const parseHexToRGB = (hex: string): string => {
-  const hexColor = hex.replace("#", "");
-  const r = parseInt(hexColor.substring(0, 2), 16);
-  const g = parseInt(hexColor.substring(2, 4), 16);
-  const b = parseInt(hexColor.substring(4, 6), 16);
-  return `${r}, ${g}, ${b}`;
-};
-
 // generates the css variables, injected in the addBase() function
 const generateColorCss = (
-  defaultFlavor: CatppuccinFlavor | "" = "",
-  prefix: string | boolean = false
-) => {
-  const result: Record<string, Record<string, string>> = {};
+  options: CatppuccinPluginOptions,
+): Record<string, Record<string, string>> => {
+  return flavorEntries
+    .map(([flavorName, colors]) => {
+      // if a prefix is defined, use e.g. '.ctp-mocha' instead of '.mocha'
+      let className = `.${options.prefix ?? ""}${flavorName}`;
 
-  flavors.map((variant) => {
-    // if a prefix is defined, use e.g. '.ctp-mocha' instead of '.mocha'
-    const className = prefix ? `.${prefix}-${variant}` : `.${variant}`;
+      // if the current variant is defaultFlavor, add to ':root' instead
+      if (options.defaultFlavor) {
+        className = flavorName === options.defaultFlavor ? ":root" : className;
+        console.log("Setting default flavor", className);
+      }
 
-    // if the current variant is defaultFlavor, add to ':root'
-    const keyName = variant === defaultFlavor ? ":root" : className;
-
-    result[keyName] = {};
-    colors.map((color) => {
-      result[keyName][`--ctp-${color}`] = parseHexToRGB(
-        palette[variant][color]
-      );
-    });
-  });
-
-  return result;
+      return {
+        [className]: colorEntries
+          .map(([colorName]) => {
+            const { r, g, b } = colors[colorName].rgb;
+            const shades = generateShades([r, g, b]);
+            return Object.entries(shades).reduce((acc, [shade, value]) => {
+              const keyName =
+                shade === "500" ? colorName : `${colorName}-${shade}`;
+              return { ...acc, [`--ctp-${keyName}`]: value };
+            }, {});
+          })
+          .reduce((acc, curr) => ({ ...acc, ...curr }), {}),
+      };
+    })
+    .reduce((acc, curr) => ({ ...acc, ...curr }), {});
 };
 
 // generates the 'options' mapping in tailwind.config.js
 // this extends the theme & adds the names of the colors
-const generateOptions = (prefix: string | boolean = false) => {
-  const result: Record<string, { DEFAULT: WithOpacityFn }> = {};
+const generateOptions = (
+  options: CatppuccinPluginOptions,
+): Record<string, Record<string, string>> => {
+  return colorEntries
+    .map(([colorName, variants]) => {
+      const keyName = `${options.prefix ?? ""}${colorName}`;
 
-  colors.map((color) => {
-    const keyName = prefix ? `${prefix}-${color}` : color;
-    // withOpacity is used to provide backward compatibility with Tailwind < 3.1
-    result[keyName] = { DEFAULT: withOpacity(`--ctp-${color}`) };
-  });
+      const fallbackFlavor: keyof CtpFlavors =
+        typeof options.defaultFlavor === "string"
+          ? options.defaultFlavor
+          : "mocha";
 
-  return result;
+      const { r, g, b } = variants[fallbackFlavor].rgb;
+      const fallbackShades = generateShades([r, g, b]);
+
+      return {
+        [keyName]: {
+          ...[50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].reduce(
+            (acc, shade) => {
+              const keyName =
+                shade === 500 ? colorName : `${colorName}-${shade}`;
+              acc[
+                shade
+              ] = `rgb(var(--ctp-${keyName}, ${fallbackShades[shade]}) / <alpha-value>)`;
+              return acc;
+            },
+            {} as Record<number, string>,
+          ),
+          DEFAULT: `rgb(var(--ctp-${colorName}, ${fallbackShades[500]}) / <alpha-value>)`,
+        },
+      };
+    })
+    .reduce((acc, curr) => ({ ...acc, ...curr }), {});
 };
 
 // every color key available in tailwindcss
@@ -108,27 +97,33 @@ const colorConfigKeys: (keyof PickByType<
   "textColor",
 ];
 
-export default plugin.withOptions<CatppuccinPluginOptions>(
+export type CatppuccinPluginOptions = {
+  defaultFlavor?: keyof CtpFlavors;
+  generateShades?: boolean;
+  prefix?: string;
+};
+const defaultOptions: CatppuccinPluginOptions = {
+  defaultFlavor: undefined,
+  generateShades: true,
+  prefix: undefined,
+};
+
+export default plugin.withOptions<Partial<CatppuccinPluginOptions>>(
   (options) => {
-    return ({ addBase }) => {
-      addBase(generateColorCss(options?.defaultFlavour, options?.prefix));
+    return ({ addComponents }) => {
+      addComponents(generateColorCss({ ...defaultOptions, ...options }));
     };
   },
   (options) => {
-    // generate the options mapping
     const extendOption: Partial<ThemeConfig> = {};
-
     colorConfigKeys.map((key) => {
-      extendOption[key] = generateOptions(options?.prefix);
+      extendOption[key] = generateOptions({ ...defaultOptions, ...options });
     });
 
-    const config: Config = {
-      content: [],
-      theme: {
-        extend: extendOption,
-      },
+    const config: Partial<Config> = {
+      theme: { extend: extendOption },
     };
 
     return config;
-  }
+  },
 );
