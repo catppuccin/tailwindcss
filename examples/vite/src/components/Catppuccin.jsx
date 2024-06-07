@@ -27,7 +27,7 @@ export const Catppuccin = () => {
           <Color color={color} key={color} />
         ))}
       </div>
-      <a href="https://github.com/nekowinston/catppuccin-tailwindcss">
+      <a href="https://github.com/catppuccin/tailwindcss">
         <button className="bg-lavender hover:bg-mauve active:bg-mauve/75">
           Install!
         </button>
