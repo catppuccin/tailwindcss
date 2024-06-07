@@ -23,25 +23,25 @@ Lots of classes hidden here to showcase the catppuccin color classes
 }
 
 #card button {
-  @apply text-ctp-base px-4 py-2 rounded-xl font-bold text-xl transition duration-300 ease-in-out;
+  @apply text-base px-4 py-2 rounded-xl font-bold text-xl transition duration-300 ease-in-out;
 }
 
 #palette {
   @apply grid justify-items-center auto-rows-auto grid-cols-7 my-8 gap-4;
 }
 
-#palette > * {
-  @apply w-6 h-6 rounded-full;
+.navbutton {
+  @apply hover:bg-pink/50 active:bg-pink/80 p-2 outline outline-1 outline-overlay2/10;
 }
 
 .navbutton-left {
-  @apply hover:bg-ctp-pink/50 active:bg-ctp-pink/80 py-2 pr-2 pl-4 rounded-l-xl outline outline-1 outline-ctp-overlay2/10;
+  @apply navbutton rounded-l-xl;
 }
 
 .navbutton-center {
-  @apply hover:bg-ctp-pink/50 active:bg-ctp-pink/80 p-2 outline outline-1 outline-ctp-overlay2/10;
+  @apply navbutton;
 }
 
 .navbutton-right {
-  @apply hover:bg-ctp-pink/50 active:bg-ctp-pink/80 py-2 pl-2 pr-4 rounded-r-xl outline outline-1 outline-ctp-overlay2/10;
+  @apply navbutton rounded-r-xl;
 }

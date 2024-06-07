@@ -8,8 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "jotai": "^2.8.3",
+    "nanostores": "^0.10.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "@catppuccin/tailwindcss": "file:../..",
