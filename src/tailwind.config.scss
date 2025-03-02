@@ -13,11 +13,11 @@
 
 @theme inline {
   @each $color-name, $color-value in map.get(catppuccin.$palette, 'latte') {
-    --color-#{$color-name}: var(--catppuccin-color-#{$color-name});
+    --color#{map.get(config.$defaults, 'prefix')}-#{$color-name}: var(--catppuccin-color-#{$color-name});
     @if (utils.isAccent($color-name)) {
       @each $variant-type, $variant-identifier in map.get(config.$variants, 'steps') {
         @for $i from 1 through list.length($variant-identifier) {
-          --color-#{$color-name}-#{list.nth($variant-identifier, $i)}: var(--catppuccin-color-#{$color-name}-#{list.nth($variant-identifier, $i)});
+          --color#{map.get(config.$defaults, 'prefix')}-#{$color-name}-#{list.nth($variant-identifier, $i)}: var(--catppuccin-color-#{$color-name}-#{list.nth($variant-identifier, $i)});
         }
       }
     }
