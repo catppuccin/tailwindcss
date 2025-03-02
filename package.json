@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "sass -s compressed --no-source-map src:css",
+    "build": "sass --no-source-map src:css",
     "sass:watch": "sass --no-source-map --watch --update --style=expanded src:.temp"
   },
   "files": [
