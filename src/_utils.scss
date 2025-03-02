@@ -1,0 +1,10 @@
+@use "./config" as config;
+
+
+@function isAccent ($color-name) {
+  $is-accent: false;
+  @each $accent in config.$accents {
+    @if ($color-name == $accent) { $is-accent: true; }
+  }
+  @return $is-accent;
+}

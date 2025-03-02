@@ -1,0 +1,17 @@
+$defaults: (
+  light: 'latte',
+  dark: 'mocha'
+);
+
+
+$variants: (
+  steps: (
+    default: '500',
+    // Identifiers are sorted by increased instensity of modification.
+    tints: (400, 300, 200, 100, 50),
+    shades: (600, 700, 800, 900, 950)
+  ),
+  step-intensity: 15%
+);
+
+$accents: ('rosewater', 'flamingo', 'pink', 'mauve', 'red', 'maroon', 'peach', 'yellow', 'green', 'teal', 'sky', 'sapphire', 'blue', 'lavender');
