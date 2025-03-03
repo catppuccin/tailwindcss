@@ -5,7 +5,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "sass --no-source-map src:css",
+    "build:palette": "sass --no-source-map -s compressed src/palette.scss:dist/palette.css; ",
+    "build:config": "sass --no-source-map src:./docs/src/styles/; ",
     "sass:watch": "sass --no-source-map --watch --update --style=expanded src:.temp"
   },
   "files": [
