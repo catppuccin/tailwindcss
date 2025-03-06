@@ -5,15 +5,42 @@ import WelcomeHero from '@components/WelcomeHero.astro';
 import AudioPlayer from '@components/AudioPlayer.astro';
 import PricingCard from '@components/PricingCard.astro';
 import Calendar from '@components/Calendar.astro';
+import CreditCard from '@components/CreditCard.astro';
 ---
 
 <Layout>
 
   <WelcomeHero />
 
-  <div class="lg:grid lg:grid-cols-2">
-    <Calendar />
-    <PricingCard />
+  <div class="grid md:grid-cols-2 lg:grid-cols-3">
+    <div class="
+      p-4 flex justify-center items-center min-h-screen
+      bg-ctp-mantle
+      bg-linear-30 from-ctp-mauve-50/50 to-ctp-mauve-50/25 dark:from-ctp-mauve-950/50 dark:to-ctp-mauve-950/25
+    ">
+      <CreditCard />
+    </div>
+    <div class="
+      p-4 flex justify-center items-center min-h-screen
+      bg-ctp-mantle
+      bg-linear-30 from-ctp-blue-50/50 to-ctp-blue-50/25 dark:from-ctp-blue-950/50 dark:to-ctp-blue-950/25
+    ">
+      <Calendar />
+    </div>
+    <div class="
+      p-4 flex justify-center items-center min-h-screen
+      bg-ctp-mantle
+      bg-linear-30 from-ctp-green-50/50 to-ctp-green-50/25 dark:from-ctp-green-950/50 dark:to-ctp-green-950/25
+    ">
+      <AudioPlayer />
+    </div>
+    <div class="
+      p-4 flex justify-center items-center min-h-screen
+      bg-ctp-mantle
+      bg-linear-30 from-ctp-flamingo-50/50 to-ctp-flamingo-50/25 dark:from-ctp-flamingo-950/50 dark:to-ctp-flamingo-950/25
+    ">
+      <PricingCard />
+    </div>
   </div>
 
 </Layout>
