@@ -2,22 +2,41 @@
 @use 'sass:list';
 @use 'sass:map';
 
-
-@use "./utils" as utils;
-@use "./config" as config;
-
-
 @use "../node_modules/@catppuccin/palette/scss/catppuccin";
+
+
+$prefix: '-ctp';
+
+$variants: (
+  default: '500',
+  tint: (400, 300, 200, 100, 50),
+  shade: (600, 700, 800, 900, 950)
+);
+
+
+@function isAccent ($color-name) {
+  $accents: ('rosewater', 'flamingo', 'pink', 'mauve', 'red', 'maroon', 'peach', 'yellow', 'green', 'teal', 'sky', 'sapphire', 'blue', 'lavender');
+  $is-accent: false;
+  @each $accent in $accents {
+    @if ($color-name == $accent) { $is-accent: true; }
+  }
+  @return $is-accent;
+}
 
 
 
 @theme inline {
-  @each $color-name, $color-value in map.get(catppuccin.$palette, 'latte') {
-    --color#{map.get(config.$defaults, 'prefix')}-#{$color-name}: var(--catppuccin-color-#{$color-name});
-    @if (utils.isAccent($color-name)) {
-      @each $variant-type, $variant-identifier in map.get(config.$variants, 'steps') {
+  @each $ctp-color-name, $ctp-color-value in map.get(catppuccin.$palette, 'latte') { // this is using latte as a dummy because it only needs to iterate over the structure
+    --color#{$prefix}-#{$ctp-color-name}: var(--catppuccin-color-#{$ctp-color-name});
+    @if (isAccent($ctp-color-name)) {
+      @each $variant-type, $variant-identifier in $variants {
         @for $i from 1 through list.length($variant-identifier) {
-          --color#{map.get(config.$defaults, 'prefix')}-#{$color-name}-#{list.nth($variant-identifier, $i)}: var(--catppuccin-color-#{$color-name}-#{list.nth($variant-identifier, $i)});
+          @if ($variant-type == 'default') {
+            --color#{$prefix}-#{$ctp-color-name}-#{$variant-identifier}: var(--catppuccin-color-#{$ctp-color-name}-#{$variant-identifier});
+          }
+          @else {
+            --color#{$prefix}-#{$ctp-color-name}-#{list.nth($variant-identifier, $i)}: var(--catppuccin-color-#{$ctp-color-name}-#{list.nth($variant-identifier, $i)});
+          }
         }
       }
     }
@@ -27,12 +46,19 @@
 
 
 @mixin createFlavorPalette ($flavor) {
-  @each $ctp-color-name, $ctp-color-value in map.get(catppuccin.$palette, 'latte') {
-    --catppuccin-color-#{$ctp-color-name}: var(--catppuccin-#{$flavor}-#{$ctp-color-name});
-    @if (utils.isAccent($ctp-color-name)) {
-      @each $variant-type, $variant-identifier in map.get(config.$variants, 'steps') {
+  @each $ctp-color-name, $ctp-color-value in map.get(catppuccin.$palette, 'latte') { // this is using latte as a dummy because it only needs to iterate over the structure
+    --catppuccin-color-#{$ctp-color-name}: #{catppuccin.get-color($flavor, $ctp-color-name)};
+    @if (isAccent($ctp-color-name)) {
+      @each $variant-type, $variant-identifier in $variants {
         @for $i from 1 through list.length($variant-identifier) {
-          --catppuccin-color-#{$ctp-color-name}-#{list.nth($variant-identifier, $i)}: var(--catppuccin-#{$flavor}-#{$ctp-color-name}-#{list.nth($variant-identifier, $i)});
+          @if ($variant-type == 'default') {
+            --catppuccin-color-#{$ctp-color-name}-#{$variant-identifier}: #{catppuccin.get-color($flavor, $ctp-color-name)};
+            // --color#{$prefix}-#{$ctp-color-name}-#{$variant-identifier}: var(--catppuccin-color-#{$ctp-color-name}-#{$variant-identifier});
+          }
+          @else {
+            --catppuccin-color-#{$ctp-color-name}-#{list.nth($variant-identifier, $i)}: #{catppuccin.get-color($flavor, $ctp-color-name, $variant-type, $i)};
+            // --color#{$prefix}-#{$ctp-color-name}-#{list.nth($variant-identifier, $i)}: var(--catppuccin-color-#{$ctp-color-name}-#{list.nth($variant-identifier, $i)});
+          }
         }
       }
     }
@@ -42,9 +68,9 @@
 
 @layer base {
   :root {
-    @include createFlavorPalette (map.get(config.$defaults, 'light'));
+    @include createFlavorPalette ('latte');
     @variant dark {
-      @include createFlavorPalette (map.get(config.$defaults, 'dark'));
+      @include createFlavorPalette ('mocha');
     }
   }
   .latte { @include createFlavorPalette ('latte'); }

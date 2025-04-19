@@ -5,8 +5,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build:palette": "sass --no-source-map -s compressed src/palette.scss:dist/palette.css; ",
-    "build:config": "sass --no-source-map src:./docs/src/styles/; ",
+    "build": "sass --no-source-map src:./dist; ",
+    "build:previe": "sass --no-source-map src:./docs/src/styles/; ",
     "sass:watch": "sass --no-source-map --watch --update --style=expanded src:.temp"
   },
   "files": [
@@ -32,7 +32,7 @@
     "soothing"
   ],
   "devDependencies": {
-    "@catppuccin/palette": "^1.7.1",
-    "sass": "^1.85.1"
+    "@catppuccin/palette": "2.0.0-beta.1",
+    "sass": "^1.86.3"
   }
 }
