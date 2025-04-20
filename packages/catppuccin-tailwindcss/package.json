@@ -20,7 +20,7 @@
   "homepage": "https://github.com/catppuccin/tailwindcss#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/catppuccin/tailwindcss.git",
+    "url": "git+https://github.com/catppuccin/tailwindcss.git",
     "directory": "packages/catppuccin-tailwindcss"
   },
   "sponsor": {
