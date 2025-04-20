@@ -1,6 +1,6 @@
 # build output
 dist/
-tailwind.config.css
+config.css
 
 # generated types
 .astro/

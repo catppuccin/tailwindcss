@@ -8,11 +8,11 @@
   },
   "scripts": {
     "prepare": "pnpm run build",
-    "build": "sass -I node_modules --no-source-map tailwind.config.scss:tailwind.config.css",
-    "watch": "sass -I node_modules --no-source-map --watch --update --style=expanded tailwind.config.scss:tailwind.config.css"
+    "build": "sass -I node_modules --no-source-map config.scss:config.css",
+    "watch": "sass -I node_modules --no-source-map --watch --update --style=expanded config.scss:config.css"
   },
   "files": [
-    "./tailwind.config.css"
+    "./config.css"
   ],
   "bugs": {
     "url": "https://github.com/catppuccin/tailwindcss/issues"

@@ -26,7 +26,7 @@
    ```css
    @import "tailwindcss";
    /* By default, Latte is light mode and Mocha is dark mode */
-   @import "@catppuccin/tailwindcss/tailwind.config.css";
+   @import "@catppuccin/tailwindcss/config.css";
    ```
 
 3. Use it in your markup!
