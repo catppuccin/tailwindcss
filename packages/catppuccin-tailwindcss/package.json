@@ -1,6 +1,6 @@
 {
   "name": "@catppuccin/tailwindcss",
-  "version": "2.0.0-beta.1",
+  "version": "1.0.0-beta.1",
   "author": "Catppuccin Org <releases@catppuccin.com>",
   "license": "MIT",
   "engines": {
