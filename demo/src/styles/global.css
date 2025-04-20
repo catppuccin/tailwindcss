@@ -1,2 +1,32 @@
 @import "tailwindcss";
 @import "@catppuccin/tailwindcss/mocha.css";
+
+@theme {
+
+  --color-ctp-primary:     var(--catppuccin-color-blue);
+  --color-ctp-primary-50:  var(--catppuccin-color-blue-50);
+  --color-ctp-primary-100: var(--catppuccin-color-blue-100);
+  --color-ctp-primary-200: var(--catppuccin-color-blue-200);
+  --color-ctp-primary-300: var(--catppuccin-color-blue-300);
+  --color-ctp-primary-400: var(--catppuccin-color-blue-400);
+  --color-ctp-primary-500: var(--catppuccin-color-blue-500);
+  --color-ctp-primary-600: var(--catppuccin-color-blue-600);
+  --color-ctp-primary-700: var(--catppuccin-color-blue-700);
+  --color-ctp-primary-800: var(--catppuccin-color-blue-800);
+  --color-ctp-primary-900: var(--catppuccin-color-blue-900);
+  --color-ctp-primary-950: var(--catppuccin-color-blue-950);
+
+  --color-ctp-secondary:     var(--catppuccin-color-sky);
+  --color-ctp-secondary-50:  var(--catppuccin-color-sky-50);
+  --color-ctp-secondary-100: var(--catppuccin-color-sky-100);
+  --color-ctp-secondary-200: var(--catppuccin-color-sky-200);
+  --color-ctp-secondary-300: var(--catppuccin-color-sky-300);
+  --color-ctp-secondary-400: var(--catppuccin-color-sky-400);
+  --color-ctp-secondary-500: var(--catppuccin-color-sky-500);
+  --color-ctp-secondary-600: var(--catppuccin-color-sky-600);
+  --color-ctp-secondary-700: var(--catppuccin-color-sky-700);
+  --color-ctp-secondary-800: var(--catppuccin-color-sky-800);
+  --color-ctp-secondary-900: var(--catppuccin-color-sky-900);
+  --color-ctp-secondary-950: var(--catppuccin-color-sky-950);
+
+}
