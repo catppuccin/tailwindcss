@@ -21,7 +21,7 @@
    yarn add -D @catppuccin/tailwindcss
    ```
 
-2. Import the theme in your `globals.css` file:
+2. Import the theme in the same file as your `tailwindcss` import
 
    ```css
    @import "tailwindcss";
