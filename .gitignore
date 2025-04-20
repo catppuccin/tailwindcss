@@ -1,6 +1,8 @@
 # build output
 dist/
-config.css
+frappe.css
+macchiato.css
+mocha.css
 
 # generated types
 .astro/

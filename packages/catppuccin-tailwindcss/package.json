@@ -1,6 +1,6 @@
 {
   "name": "@catppuccin/tailwindcss",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "author": "Catppuccin Org <releases@catppuccin.com>",
   "license": "MIT",
   "engines": {
@@ -8,11 +8,13 @@
   },
   "scripts": {
     "prepare": "pnpm run build",
-    "build": "sass -I node_modules --no-source-map config.scss:config.css",
-    "watch": "sass -I node_modules --no-source-map --watch --update --style=expanded config.scss:config.css"
+    "build": "sass -I node_modules --no-source-map src:./",
+    "watch": "sass -I node_modules --no-source-map --watch --update --style=expanded src:./"
   },
   "files": [
-    "./config.css"
+    "./frappe.css",
+    "./macchiato.css",
+    "./mocha.css"
   ],
   "bugs": {
     "url": "https://github.com/catppuccin/tailwindcss/issues"

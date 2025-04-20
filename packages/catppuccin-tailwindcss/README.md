@@ -25,8 +25,12 @@
 
    ```css
    @import "tailwindcss";
-   /* By default, Latte is light mode and Mocha is dark mode */
-   @import "@catppuccin/tailwindcss/config.css";
+
+   /* 
+    Choose between `mocha`, `frappe` or `macchiato` for dark mode, latte is included as the light mode flavour.
+    We recommend using `mocha` for dark mode.
+   */
+   @import "@catppuccin/tailwindcss/mocha.css";
    ```
 
 3. Use it in your markup!
@@ -45,7 +49,7 @@
 
      <!-- 
       Flavour variants are predefined (`latte`, `frappe`, `macchiato`, and `mocha`)
-      which allows you to force specific flavours.
+      which allows you to force specific flavours and support custom theme switchers.
      -->
      <div className="latte">
        <p className="bg-ctp-base text-ctp-text">Hello from Latte!</p>
