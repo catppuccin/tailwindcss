@@ -2,8 +2,7 @@
 @use 'sass:list';
 @use 'sass:map';
 
-@use "../node_modules/@catppuccin/palette/scss/catppuccin";
-
+@use "@catppuccin/palette/scss/catppuccin";
 
 $prefix: '-ctp';
 
@@ -13,7 +12,6 @@ $variants: (
   shade: (600, 700, 800, 900, 950)
 );
 
-
 @function isAccent ($color-name) {
   $accents: ('rosewater', 'flamingo', 'pink', 'mauve', 'red', 'maroon', 'peach', 'yellow', 'green', 'teal', 'sky', 'sapphire', 'blue', 'lavender');
   $is-accent: false;
@@ -22,8 +20,6 @@ $variants: (
   }
   @return $is-accent;
 }
-
-
 
 @theme inline {
   @each $ctp-color-name, $ctp-color-value in map.get(catppuccin.$palette, 'latte') { // this is using latte as a dummy because it only needs to iterate over the structure
@@ -42,8 +38,6 @@ $variants: (
     }
   }
 }
-
-
 
 @mixin createFlavorPalette ($flavor) {
   @each $ctp-color-name, $ctp-color-value in map.get(catppuccin.$palette, 'latte') { // this is using latte as a dummy because it only needs to iterate over the structure
@@ -65,7 +59,6 @@ $variants: (
   }
 }
 
-
 @layer base {
   :root {
     @include createFlavorPalette ('latte');
@@ -78,7 +71,6 @@ $variants: (
   .macchiato { @include createFlavorPalette ('macchiato'); }
   .mocha { @include createFlavorPalette ('mocha'); }
 }
-
 
 @custom-variant latte (&:where(.latte, .latte *));
 @custom-variant frappe (&:where(.frappe, .frappe *));

@@ -1,0 +1,41 @@
+{
+  "name": "@catppuccin/tailwindcss",
+  "version": "2.0.0-beta.1",
+  "author": "Catppuccin Org <releases@catppuccin.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "prepare": "pnpm run build",
+    "build": "sass -I node_modules --no-source-map tailwind.config.scss:tailwind.config.css",
+    "watch": "sass -I node_modules --no-source-map --watch --update --style=expanded tailwind.config.scss:tailwind.config.css"
+  },
+  "files": [
+    "./tailwind.config.css"
+  ],
+  "bugs": {
+    "url": "https://github.com/catppuccin/tailwindcss/issues"
+  },
+  "homepage": "https://github.com/catppuccin/tailwindcss#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/catppuccin/tailwindcss.git",
+    "directory": "packages/catppuccin-tailwindcss"
+  },
+  "sponsor": {
+    "url": "https://opencollective.com/catppuccin"
+  },
+  "keywords": [
+    "pastel-colors",
+    "catppuccin",
+    "colors",
+    "theme",
+    "palette",
+    "soothing"
+  ],
+  "devDependencies": {
+    "@catppuccin/palette": "2.0.0-beta.1",
+    "sass": "^1.86.3"
+  }
+}
