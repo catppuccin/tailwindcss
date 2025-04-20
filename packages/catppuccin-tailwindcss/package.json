@@ -1,6 +1,7 @@
 {
   "name": "@catppuccin/tailwindcss",
   "version": "1.0.0-beta.2",
+  "description": "💨 Soothing pastel theme for Tailwind CSS",
   "author": "Catppuccin Org <releases@catppuccin.com>",
   "license": "MIT",
   "engines": {
