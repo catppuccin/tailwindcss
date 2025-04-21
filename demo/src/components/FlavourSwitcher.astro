@@ -10,23 +10,32 @@ const flavors = [
 
 <form
   id="flavour-switcher"
-  class="inline-block px-4 py-2 mt-8 bg-linear-35 from-ctp-primary-400
-  to-ctp-secondary-400 hover:from-ctp-primary-500 hover:to-ctp-secondary-500
-  bg-ctp-mantle hover:bg-ctp-mantle/80 dark:bg-ctp-mantle
-  dark:hover:bg-ctp-mantle/80 text-sm font-semibold
-  text-ctp-crust rounded-[2px] transition-colors flex-row"
->
+  class="
+    mt-6
+    flex gap-2 flex-wrap
+">
   {
     flavors.map((flavor) => (
-      <div class="flavour">
+      <div class="
+        flavour
+        mt-2
+      ">
         <input
           type="radio"
           name="flavour"
           id={flavor.id}
           value={flavor.id}
           aria-hidden
+          class="hidden"
         />
-        <label for={flavor.id}>
+        <label for={flavor.id} class="
+          px-4 py-2
+          bg-ctp-mantle hover:bg-ctp-mantle/80 dark:bg-ctp-mantle dark:hover:bg-ctp-mantle/80
+          bg-linear-35 from-ctp-primary-400 to-ctp-secondary-400 hover:from-ctp-primary-500 hover:to-ctp-secondary-500
+          text-sm font-semibold text-ctp-crust rounded-[2px]
+          transition-colors
+          whitespace-nowrap
+        ">
           {flavor.emoji} {flavor.name}
         </label>
       </div>
