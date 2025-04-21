@@ -1,8 +1,9 @@
 @import "tailwindcss";
 @import "@catppuccin/tailwindcss/mocha.css";
 
-@theme {
+@custom-variant dark (&:where(.frappe, .frappe *, .macchiato, .macchiato *, .mocha, .mocha *));
 
+@theme {
   --color-ctp-primary:     var(--catppuccin-color-blue);
   --color-ctp-primary-50:  var(--catppuccin-color-blue-50);
   --color-ctp-primary-100: var(--catppuccin-color-blue-100);
@@ -28,5 +29,4 @@
   --color-ctp-secondary-800: var(--catppuccin-color-sky-800);
   --color-ctp-secondary-900: var(--catppuccin-color-sky-900);
   --color-ctp-secondary-950: var(--catppuccin-color-sky-950);
-
 }
