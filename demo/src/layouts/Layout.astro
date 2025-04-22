@@ -1,0 +1,45 @@
+---
+import "@styles/global.css";
+
+import Footer from "./partials/_footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      const isThemeAuto = localStorage.getItem("theme-auto");
+      if (isThemeAuto === null) {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const defaultTheme = prefersDark ? "mocha" : "latte";
+        localStorage.setItem("theme", defaultTheme);
+        localStorage.setItem("theme-auto", "true");
+        document.documentElement.className = defaultTheme;
+      }
+      const theme = localStorage.getItem("theme");
+      if (theme) {
+        document.documentElement.className = theme;
+      }
+    </script>
+    <title>Catppuccin × tailwindcss</title>
+  </head>
+  <body class="bg-ctp-base">
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
