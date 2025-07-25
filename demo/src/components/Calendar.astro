@@ -1,0 +1,613 @@
+<div id="calendar-wrapper">
+
+  <noscript>
+    <div id="calendar" class="
+      rounded-lg
+      shadow-lg
+      bg-ctp-base
+      text-ctp-text
+      overflow-clip
+      2xl:transform 2xl:scale-140
+    ">
+      <div class="
+        relative
+        px-8 py-4
+        bg-ctp-crust
+        bg-linear-30 from-ctp-crust to-ctp-mantle
+        font-bold text-ctp-text
+      ">
+        April
+        <div class="
+          absolute left-0 right-0 bottom-0
+          h-1
+          bg-ctp-primary
+          bg-linear-30 from-ctp-primary to-ctp-secondary
+        "></div>
+      </div>
+      <div class="
+        p-6
+        grid grid-cols-7 grid-rows-6 gap-2
+      ">
+        <div class="
+          legend
+          grid grid-cols-subgrid col-span-7
+        ">
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            text-ctp-overlay0 text-center
+          ">S</div>
+          <div class="
+            w-8 h-8
+          grid place-items-center
+          rounded-xs
+            text-ctp-overlay0 text-center
+          ">M</div>
+          <div class="
+            w-8 h-8
+          grid place-items-center
+          rounded-xs
+            text-ctp-overlay0 text-center
+          ">T</div>
+          <div class="
+            w-8 h-8
+          grid place-items-center
+          rounded-xs
+            text-ctp-overlay0 text-center
+          ">W</div>
+          <div class="
+            w-8 h-8
+          grid place-items-center
+          rounded-xs
+            text-ctp-overlay0 text-center
+          ">T</div>
+          <div class="
+            w-8 h-8
+          grid place-items-center
+          rounded-xs
+            text-ctp-overlay0 text-center
+          ">F</div>
+          <div class="
+            w-8 h-8
+          grid place-items-center
+          rounded-xs
+            text-ctp-overlay0 text-center
+          ">S</div>
+        </div>
+        <div class="
+          week
+          grid grid-cols-subgrid col-span-7
+        ">
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-surface0 text-center
+          ">30</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-surface0 text-center
+          ">31</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">1</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">2</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">3</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            bg-ctp-primary-300 dark:bg-ctp-primary-700
+            bg-linear-30 from from-ctp-sapphire-300 to-ctp-secondary-300 dark:from-ctp-sapphire-700 dark:to-ctp-secondary-700
+            text-ctp-base text-center font-bold
+          ">4</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-overlay0 text-center
+          ">5</div>
+        </div>
+        <div class="
+          week
+          grid grid-cols-subgrid col-span-7
+          rounded-xs
+          has-[.today]:bg-ctp-primary-50 has-[.today]:dark:bg-ctp-primary-950
+          has-[.today]:bg-linear-30 from-ctp-primary-50 to-ctp-secondary-50 dark:from-ctp-primary-950 dark:to-ctp-secondary-950
+        ">
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-primary-100 dark:hover:bg-ctp-primary-900
+            text-ctp-subtext0 text-center
+          ">6</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-primary-100 dark:hover:bg-ctp-primary-900
+            text-ctp-text text-center
+          ">7</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-primary-100 dark:hover:bg-ctp-primary-900
+            text-ctp-text text-center
+          ">8</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-primary-100 dark:hover:bg-ctp-primary-900
+            text-ctp-text text-center
+          ">9</div>
+          <div class="
+            today
+            relative
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            bg-ctp-primary
+            bg-linear-30 from-ctp-primary to-ctp-secondary
+            text-ctp-base dark:text-ctp-crust text-center font-bold
+          ">
+            <span class="z-10">10</span>
+            <div class="
+              absolute
+              w-6 h-6
+              rounded-xs
+              bg-ctp-primary
+              bg-linear-30 from-ctp-primary to-ctp-secondary
+              opacity-50
+              animate-ping
+            ">
+            </div>
+          </div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-primary-100 dark:hover:bg-ctp-primary-900
+            text-ctp-text text-center
+          ">11</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-primary-100 dark:hover:bg-ctp-primary-900
+            text-ctp-subtext0 text-center
+          ">12</div>
+        </div>
+        <div class="
+          week
+          grid grid-cols-subgrid col-span-7
+        ">
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            bg-ctp-primary-300 dark:bg-ctp-primary-700
+            bg-linear-30 from from-ctp-sapphire-300 to-ctp-secondary-300 dark:from-ctp-sapphire-700 dark:to-ctp-secondary-700
+            text-ctp-base text-center font-bold
+          ">13</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">14</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">15</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">16</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">17</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">18</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-overlay0 text-center
+          ">19</div>
+        </div>
+        <div class="
+          week
+          grid grid-cols-subgrid col-span-7
+        ">
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-overlay0 text-center
+          ">20</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">21</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">22</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            bg-ctp-mauve-300 dark:bg-ctp-mauve-700
+            bg-linear-30 from from-ctp-mauve-300 to-ctp-pink-300 dark:from-ctp-mauve-700 dark:to-ctp-pink-700
+            text-ctp-base text-center font-bold
+          ">23</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">24</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">25</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-overlay0 text-center
+          ">26</div>
+        </div>
+        <div class="
+          week
+          grid grid-cols-subgrid col-span-7
+        ">
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-overlay0 text-center
+          ">27</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            bg-ctp-rosewater-300 dark:bg-ctp-rosewater-700
+            bg-linear-30 from from-ctp-flamingo-300 to-ctp-rosewater-300 dark:from-ctp-flamingo-600 dark:to-ctp-rosewater-600
+            text-ctp-base text-center font-bold
+          ">28</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">29</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-text text-center
+          ">30</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-surface0 text-center
+          ">1</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-surface0 text-center
+          ">2</div>
+          <div class="
+            w-8 h-8
+            grid place-items-center
+            rounded-xs
+            hover:bg-ctp-crust
+            text-ctp-surface0 text-center
+          ">3</div>
+        </div>
+
+      </div>
+    </div>
+  </noscript>
+
+</div>
+
+
+<template id="calendar-template">
+  <div id="calendar" class="
+  rounded-lg
+  shadow-lg
+  bg-ctp-base
+  text-ctp-text
+  overflow-clip
+  2xl:transform 2xl:scale-140
+  ">
+
+    <div class="
+      relative
+      px-8 py-4
+      bg-ctp-crust
+      bg-linear-30 from-ctp-crust to-ctp-mantle
+      font-bold text-ctp-text
+    ">
+      <span id="month-name"></span>
+      <div class="
+        absolute left-0 right-0 bottom-0
+        h-1
+        bg-ctp-primary
+        bg-linear-30 from-ctp-primary to-ctp-secondary
+      "></div>
+    </div>
+
+    <div id="calendar-page" class="
+      p-6
+      grid grid-cols-7 gap-2
+    ">
+
+      <div class="
+        legend
+        grid grid-cols-subgrid col-span-7
+      ">
+        <div class="
+          w-8 h-8
+          grid place-items-center
+          rounded-xs
+          text-ctp-overlay0 text-center
+        ">S</div>
+        <div class="
+          w-8 h-8
+        grid place-items-center
+        rounded-xs
+          text-ctp-overlay0 text-center
+        ">M</div>
+        <div class="
+          w-8 h-8
+        grid place-items-center
+        rounded-xs
+          text-ctp-overlay0 text-center
+        ">T</div>
+        <div class="
+          w-8 h-8
+        grid place-items-center
+        rounded-xs
+          text-ctp-overlay0 text-center
+        ">W</div>
+        <div class="
+          w-8 h-8
+        grid place-items-center
+        rounded-xs
+          text-ctp-overlay0 text-center
+        ">T</div>
+        <div class="
+          w-8 h-8
+        grid place-items-center
+        rounded-xs
+          text-ctp-overlay0 text-center
+        ">F</div>
+        <div class="
+          w-8 h-8
+        grid place-items-center
+        rounded-xs
+          text-ctp-overlay0 text-center
+        ">S</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template id="week-template">
+  <div class="
+    week
+    grid grid-cols-subgrid col-span-7
+    rounded-xs
+    has-[.today]:bg-ctp-primary-50 has-[.today]:dark:bg-ctp-primary-950
+    has-[.today]:bg-linear-30 from-ctp-primary-50 to-ctp-secondary-50 dark:from-ctp-primary-950 dark:to-ctp-secondary-950
+  "></div>
+</template>
+
+<template id="regular-day-template">
+  <div class="
+    w-8 h-8
+    grid place-items-center
+    rounded-xs
+    hover:bg-ctp-primary/35
+    text-ctp-text text-center
+  ">#date#</div>
+</template>
+
+<template id="current-day-template">
+  <div class="
+    today
+    w-8 h-8
+    grid place-items-center
+    rounded-xs
+    bg-ctp-primary
+    bg-linear-30 from-ctp-primary to-ctp-secondary
+    text-ctp-base dark:text-ctp-crust text-center font-bold
+  ">#date#</div>
+</template>
+
+<template id="muted-day-template">
+  <div class="
+    w-8 h-8
+    grid place-items-center
+    rounded-xs
+    hover:bg-ctp-primary/35
+    text-ctp-overlay0 text-center
+  ">#date#</div>
+</template>
+
+
+<script>
+  function buildCalendarDay (template: Element, date: number): Node {
+    const clone = template.content.cloneNode(true)
+    const cloneCalendarPage = clone.querySelector('div')
+    cloneCalendarPage.textContent = date
+    return clone
+  }
+
+
+  function buildCalendarDays (currentMonth: any, previousMonth: any, currentDay: any): Node[] | void {
+    const calendarDays: Node[] = []
+
+    // previous month overhang
+    if (currentMonth.firstDayWeekday != 0) {
+      for (let i = 0; i < currentMonth.firstDayWeekday; i++) {
+        const template: Element | null = document.getElementById('muted-day-template')
+        if (!template) return console.error('Muted day template not found')
+        const Element = buildCalendarDay(template, (+previousMonth.length - i))
+        calendarDays.push(Element)
+      }
+    }
+
+    // current month
+    for (let i = 1; i <= +currentMonth.length; i++) {
+      const templateID: string  = i == currentDay.number ? 'current-day-template' : 'regular-day-template'
+      const template: Element | null = document.getElementById(templateID)
+      if (!template) return console.error(`${templateID} not found`)
+      const Element = buildCalendarDay(template, i)
+      calendarDays.push(Element)
+    }
+
+    // next month
+    if (currentMonth.lastDayWeekday != 6) {
+      for (let i = 0; i < 6 - currentMonth.lastDayWeekday; i++) {
+        const template = document.getElementById('muted-day-template')
+        if (!template) return console.error('Muted day template not found')
+        const Element = buildCalendarDay(template, (i + 1))
+        calendarDays.push(Element)
+      }
+    }
+
+    return calendarDays
+  }
+
+
+  function buildCalendarWeeks (elements: Node[]): Node[] {
+    const calendarWeeks: Node[] = []
+
+    for (let i = 0; i < elements.length; i += 7) {
+      const template = document.getElementById('week-template')
+      if (template) {
+        const clone = template.content.cloneNode(true)
+        const cloneCalendarPage = clone.querySelector('div')
+        for (let j = 0; j < 7; j++) {
+          cloneCalendarPage.appendChild(elements[i + j])
+        }
+        calendarWeeks.push(clone)
+      }
+    }
+
+    return calendarWeeks
+  }
+
+
+  ;(function buildCalendar (baseDate: Date) {
+
+    const getDaysInMonth = (year: number, month: number): Number => new Date(year, month+1, 0).getDate()
+    const getMonthName = (date: Date): string => date.toLocaleString('default', { month: 'long' })
+    const getDayName = (date: Date): string => date.toLocaleString('default', { weekday: 'long' })
+
+    const currentDate = baseDate
+    const currentYear = currentDate.getFullYear()
+    const currentMonth = {
+      'number': currentDate.getMonth(),
+      'name': getMonthName(currentDate),
+      'length': getDaysInMonth(currentYear, currentDate.getMonth()),
+      'firstDayWeekday': new Date(currentYear, currentDate.getMonth(), 1).getDay(),
+      'firstDayName': getDayName(new Date(currentYear, currentDate.getMonth(), 1)),
+      'lastDayWeekday': new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDay()
+    }
+    const previousMonth = {
+      'number': currentDate.getMonth() - 1,
+      'length': getDaysInMonth(currentYear, currentDate.getMonth() - 1),
+    }
+    const currentDay = {
+      'number': currentDate.getDate(),
+      'name': getDayName(currentDate)
+    }
+
+    const calendarDays = buildCalendarDays(currentMonth, previousMonth, currentDay)
+    const calendarWeeks = buildCalendarWeeks(calendarDays as Node[])
+
+    const template = document.getElementById('calendar-template')
+    if (!template) return console.error('Calendar template not found')
+    const clone = template.content.cloneNode(true)
+
+    const cloneMonthName = clone.querySelector('#month-name')
+    if (cloneMonthName) {
+      cloneMonthName.textContent = currentMonth.name
+    }
+
+    const cloneCalendarPage = clone.querySelector('#calendar-page')
+    calendarWeeks.forEach((week) => {
+      cloneCalendarPage?.appendChild(week)
+    })
+
+    const calendarWrapper = document.getElementById('calendar-wrapper')
+    calendarWrapper?.appendChild(clone)
+
+  })(new Date())
+</script>

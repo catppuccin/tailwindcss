@@ -1,0 +1,99 @@
+---
+const flavors = [
+  { id: "latte", name: "Latte", emoji: "🌻" },
+  { id: "frappe", name: "Frappé", emoji: "🪴" },
+  { id: "macchiato", name: "Macchiato", emoji: "🌺" },
+  { id: "mocha", name: "Mocha", emoji: "🌿" },
+  { id: "auto", name: "Auto", emoji: "🖥️" },
+];
+---
+
+<form id="flavour-switcher" class="mt-6 flex gap-2 flex-wrap">
+  {
+    flavors.map((flavor) => (
+      <div class="flavour mt-2">
+        <input
+          type="radio"
+          name="flavour"
+          id={flavor.id}
+          value={flavor.id}
+          aria-hidden
+          class="hidden peer"
+        />
+        <label
+          for={flavor.id}
+          class="
+          px-4 py-2
+          text-sm 2xl:text-lg font-semibold text-ctp-crust rounded-[2px]
+          transition-colors
+          whitespace-nowrap
+          peer-checked:bg-linear-35
+          peer-checked:from-ctp-mauve-400
+          peer-checked:to-ctp-blue-400
+          peer-checked:hover:from-ctp-mauve-600
+          peer-checked:hover:to-ctp-blue-600
+          peer-not-checked:bg-linear-35
+          peer-not-checked:from-ctp-primary-400
+          peer-not-checked:to-ctp-secondary-400
+          peer-not-checked:hover:from-ctp-primary-600
+          peer-not-checked:hover:to-ctp-secondary-600
+        "
+        >
+          {flavor.emoji} {flavor.name}
+        </label>
+      </div>
+    ))
+  }
+</form>
+
+<script is:inline>
+  function handleThemeChange() {
+    const theme = document.querySelector('input[name="flavour"]:checked').value;
+    if (theme === "auto") {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const defaultTheme = prefersDark ? "mocha" : "latte";
+      document.documentElement.className = defaultTheme;
+      localStorage.setItem("theme-auto", "true");
+    } else {
+      document.documentElement.className = theme;
+      localStorage.setItem("theme", theme);
+      localStorage.setItem("theme-auto", "false");
+    }
+  }
+  function checkRadioButton(radioButton) {
+    if (!radioButton.checked) {
+      radioButton.checked = true;
+    }
+    handleThemeChange();
+  }
+
+  const form = document.getElementById("flavour-switcher");
+  const radioSelectors = form.querySelectorAll('input[type="radio"]');
+  radioSelectors.forEach((selector) => {
+    selector.addEventListener("change", handleThemeChange);
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const isThemeAuto = localStorage.getItem("theme-auto");
+    if (isThemeAuto === "true") {
+      checkRadioButton(document.getElementById("auto"));
+    } else {
+      const theme = localStorage.getItem("theme");
+      if (theme) {
+        checkRadioButton(document.getElementById(theme));
+      }
+    }
+  });
+
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+  prefersDark.addEventListener("change", (event) => {
+    const isThemeAuto = localStorage.getItem("theme-auto");
+    if (isThemeAuto === "true") {
+      const defaultTheme = event.matches ? "mocha" : "latte";
+      document.documentElement.className = defaultTheme;
+      localStorage.setItem("theme", defaultTheme);
+    }
+  });
+</script>

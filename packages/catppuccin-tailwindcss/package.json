@@ -1,0 +1,44 @@
+{
+  "name": "@catppuccin/tailwindcss",
+  "version": "1.0.0-beta.2",
+  "description": "💨 Soothing pastel theme for Tailwind CSS",
+  "author": "Catppuccin Org <releases@catppuccin.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "prepare": "pnpm run build",
+    "build": "sass -I node_modules --no-source-map src:./",
+    "watch": "sass -I node_modules --no-source-map --watch --update --style=expanded src:./"
+  },
+  "files": [
+    "./frappe.css",
+    "./macchiato.css",
+    "./mocha.css"
+  ],
+  "bugs": {
+    "url": "https://github.com/catppuccin/tailwindcss/issues"
+  },
+  "homepage": "https://github.com/catppuccin/tailwindcss#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catppuccin/tailwindcss.git",
+    "directory": "packages/catppuccin-tailwindcss"
+  },
+  "sponsor": {
+    "url": "https://opencollective.com/catppuccin"
+  },
+  "keywords": [
+    "pastel-colors",
+    "catppuccin",
+    "colors",
+    "theme",
+    "palette",
+    "soothing"
+  ],
+  "devDependencies": {
+    "@catppuccin/palette": "2.0.0-beta.1",
+    "sass": "^1.86.3"
+  }
+}
