@@ -1,7 +1,7 @@
 {
   "name": "@catppuccin/tailwindcss-monorepo",
   "private": "true",
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.13.1",
   "engines": {
     "node": ">=22.0.0"
   },
