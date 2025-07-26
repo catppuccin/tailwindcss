@@ -15,10 +15,10 @@ importers:
         version: link:../packages/catppuccin-tailwindcss
       '@tailwindcss/vite':
         specifier: ^4.0.9
-        version: 4.1.4(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.86.3))
+        version: 4.1.4(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.89.2))
       astro:
         specifier: ^5.4.1
-        version: 5.7.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.0)(sass@1.86.3)(typescript@5.8.3)
+        version: 5.7.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.0)(sass@1.89.2)(typescript@5.8.3)
       tailwindcss:
         specifier: ^4.0.9
         version: 4.1.4
@@ -30,7 +30,7 @@ importers:
         version: 2.0.0-beta.1
       sass:
         specifier: ^1.86.3
-        version: 1.86.3
+        version: 1.89.2
 
 packages:
 
@@ -990,8 +990,8 @@ packages:
   http-cache-semantics@4.1.1:
     resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
 
-  immutable@5.1.1:
-    resolution: {integrity: sha512-3jatXi9ObIsPGr3N5hGw/vWWcTkq6hUYhpQz4k0wLC+owqWi/LiugIw9x0EdNZ2yGedKN/HzePiBvaJRXa0Ujg==}
+  immutable@5.1.3:
+    resolution: {integrity: sha512-+chQdDfvscSF1SJqv2gn4SRO2ZyS3xL3r7IW/wWEEzrzLisnOlKiQu5ytC/BVNcS15C39WT2Hg/bjKjDMcu+zg==}
 
   import-meta-resolve@4.1.0:
     resolution: {integrity: sha512-I6fiaX09Xivtk+THaMfAwnA3MVA5Big1WHF1Dfx9hFuvNIWpXnorlkzhcQf6ehrqQiiZECRt1poOAkPmer3ruw==}
@@ -1431,8 +1431,8 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
-  sass@1.86.3:
-    resolution: {integrity: sha512-iGtg8kus4GrsGLRDLRBRHY9dNVA78ZaS7xr01cWnS7PEMQyFtTqBiyCrfpTYTZXRWM94akzckYjh8oADfFNTzw==}
+  sass@1.89.2:
+    resolution: {integrity: sha512-xCmtksBKd/jdJ9Bt9p7nPKiuqrlBMBuuGkQlkhZjjQk3Ty48lv93k5Dq6OPkKt4XwxDJ7tvlfrTa1MPA9bf+QA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -2211,12 +2211,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.4
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.4
 
-  '@tailwindcss/vite@4.1.4(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.86.3))':
+  '@tailwindcss/vite@4.1.4(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.89.2))':
     dependencies:
       '@tailwindcss/node': 4.1.4
       '@tailwindcss/oxide': 4.1.4
       tailwindcss: 4.1.4
-      vite: 6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.86.3)
+      vite: 6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.89.2)
 
   '@types/debug@4.1.12':
     dependencies:
@@ -2265,7 +2265,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@5.7.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.0)(sass@1.86.3)(typescript@5.8.3):
+  astro@5.7.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.0)(sass@1.89.2)(typescript@5.8.3):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -2318,8 +2318,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.15.0
       vfile: 6.0.3
-      vite: 6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.86.3)
-      vitefu: 1.0.6(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.86.3))
+      vite: 6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.89.2)
+      vitefu: 1.0.6(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.89.2))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.1
@@ -2693,7 +2693,7 @@ snapshots:
 
   http-cache-semantics@4.1.1: {}
 
-  immutable@5.1.1: {}
+  immutable@5.1.3: {}
 
   import-meta-resolve@4.1.0: {}
 
@@ -3343,10 +3343,10 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.40.0
       fsevents: 2.3.3
 
-  sass@1.86.3:
+  sass@1.89.2:
     dependencies:
       chokidar: 4.0.3
-      immutable: 5.1.1
+      immutable: 5.1.3
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.1
@@ -3562,7 +3562,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.86.3):
+  vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.89.2):
     dependencies:
       esbuild: 0.25.2
       fdir: 6.4.4(picomatch@4.0.2)
@@ -3574,11 +3574,11 @@ snapshots:
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.29.2
-      sass: 1.86.3
+      sass: 1.89.2
 
-  vitefu@1.0.6(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.86.3)):
+  vitefu@1.0.6(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.89.2)):
     optionalDependencies:
-      vite: 6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.86.3)
+      vite: 6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(sass@1.89.2)
 
   web-namespaces@2.0.1: {}
 
