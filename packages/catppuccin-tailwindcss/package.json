@@ -1,9 +1,14 @@
 {
   "name": "@catppuccin/tailwindcss",
   "version": "1.0.0-beta.2",
-  "description": "💨 Soothing pastel theme for Tailwind CSS",
+  "description": "💨 Soothing pastel theme for TailwindCSS",
   "author": "Catppuccin Org <releases@catppuccin.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org"
+  },
   "engines": {
     "node": ">=22.0.0"
   },
