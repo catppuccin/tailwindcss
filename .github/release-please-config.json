@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "last-release-sha": "ac67d5e66179b6b2de89c0708b765dd1f6e72df6",
+  "include-component-in-tag": false,
+  "packages": {
+    "packages/catppuccin-tailwindcss": {
+      "package-name": "",
+      "release-type": "node"
+    }
+  }
+}
