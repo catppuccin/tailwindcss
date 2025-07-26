@@ -39,6 +39,6 @@
   ],
   "devDependencies": {
     "@catppuccin/palette": "2.0.0-beta.1",
-    "sass": "^1.86.3"
+    "sass": "^1.89.2"
   }
 }
