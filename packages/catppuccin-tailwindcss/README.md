@@ -19,6 +19,7 @@
    npm install -D @catppuccin/tailwindcss
    pnpm add -D @catppuccin/tailwindcss
    yarn add -D @catppuccin/tailwindcss
+   bun add -D @catppuccin/tailwindcss 
    ```
 
 2. Import the theme in the same file as your `tailwindcss` import
