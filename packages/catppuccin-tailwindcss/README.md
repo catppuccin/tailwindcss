@@ -57,6 +57,30 @@
    </body>
    ```
 
+## Usage with `@tailwindcss/typography`
+
+1. To use with the `prose` class from the typography plugin, import `@catppuccin/tailwindcss/typography.css` along with your flavour variant of choice:
+
+   ```css
+   @import "tailwindcss";
+   @plugin "@tailwindcss/typography";
+
+   @import "@catppuccin/tailwindcss/<variant>.css";
+   @import "@catppuccin/tailwindcss/typography.css";
+   ```
+
+2. In your HTML file, use the `prose-catppuccin` class.
+
+   ```html
+   <div class="bg-ctp-base">
+     <article class="prose prose-catppuccin">
+     <!--- ... --->
+     </article>
+   </div>
+   ```
+
+**Note**: since `@catpuccin/tailwind` auto-selects color themes, `prose-invert` will have no effect.
+
 Check out some more advanced examples at
 [tailwindcss.catppuccin.com](https://tailwindcss.catppuccin.com)!
 

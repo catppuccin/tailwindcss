@@ -3,6 +3,7 @@ dist/
 frappe.css
 macchiato.css
 mocha.css
+typography.css
 
 # generated types
 .astro/

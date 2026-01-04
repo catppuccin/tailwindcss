@@ -20,7 +20,8 @@
   "files": [
     "./frappe.css",
     "./macchiato.css",
-    "./mocha.css"
+    "./mocha.css",
+    "./typography.css"
   ],
   "bugs": {
     "url": "https://github.com/catppuccin/tailwindcss/issues"
