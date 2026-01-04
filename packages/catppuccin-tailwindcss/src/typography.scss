@@ -1,0 +1,25 @@
+@utility prose-catppuccin {
+  --tw-prose-body: var(--color-ctp-text);
+  --tw-prose-headings: var(--color-ctp-text);
+  --tw-prose-lead: var(--color-ctp-overlay2);
+  --tw-prose-links: var(--color-ctp-blue);
+  --tw-prose-bold: var(--color-ctp-text);
+  --tw-prose-counters: var(--color-overlay0);
+  --tw-prose-bullets: var(--color-ctp-surface2);
+  --tw-prose-hr: var(--color-ctp-surface1);
+  --tw-prose-quotes: var(--color-ctp-subtext0);
+  --tw-prose-quote-borders: var(--color-ctp-overlay2);
+  --tw-prose-captions: var(--color-ctp-text);
+  --tw-prose-kbd: var(--color-ctp-overlay2);
+  --tw-prose-kbd-shadows: color-mix(
+    in oklab,
+    var(--color-ctp-overlay2) 50%,
+    transparent
+  );
+  --tw-prose-code: var(--color-ctp-subtext0);
+  --tw-prose-pre-code: var(--color-ctp-subtext1);
+  --tw-prose-pre-bg: var(--color-ctp-mantle);
+  --tw-prose-th-borders: var(--color-ctp-surface2);
+  --tw-prose-td-borders: var(--color-ctp-surface0);
+}
+
