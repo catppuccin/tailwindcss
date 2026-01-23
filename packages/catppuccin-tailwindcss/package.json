@@ -15,6 +15,7 @@
   "scripts": {
     "prepare": "pnpm run build",
     "build": "sass -I node_modules --no-source-map src:./",
+    "postbuild": "sed --in-place '/@variant dark {/{N; s/@variant dark {\\n[[:space:]]*:root {/:root {\\n    @variant dark {/}' *.css",
     "watch": "sass -I node_modules --no-source-map --watch --update --style=expanded src:./"
   },
   "files": [
