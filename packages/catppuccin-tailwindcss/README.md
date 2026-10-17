@@ -60,6 +60,11 @@
 Check out some more advanced examples at
 [tailwindcss.catppuccin.com](https://tailwindcss.catppuccin.com)!
 
+## Development
+
+Install [Whiskers](https://github.com/catppuccin/whiskers) and run
+`whiskers tailwindcss.tera` from the repository root to regenerate the Sass palette.
+
 ## 💝 Thanks to
 
 **Current maintainers**
